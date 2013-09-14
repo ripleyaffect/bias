@@ -1,31 +1,31 @@
-#!/usr/.rvm/rubies/ruby-2.0.0-p247/bin/ruby
+#!/usr/bin/env ruby
 
-dict = {
-	"the" => 1,
-	"quick" => -1,
-	"brown" => 1,
-	"fox" => 1,
-	"jumps" => -1
-	"over" => -1,
-	"my" => 1,
-	"lazy" => 1,
-	"dog" => -1
-}
+require_relative 'preferences'
+require_relative 'dict_parser'
 
 # print "Enter the name of the file to read: "
-filename = ARGV[0]
-
-file = File.open( filename )
-
-text_array = []
-
-file.each do |line|
-	text_array = line.split
+unless ARGV[0]
+	puts 'There was no file given.'
+	puts "\tPlease give a filename in the form 'bias.rb [FILENAME]', \n\tor use 'bias.rb [FILENAME] [DICTIONARY]' if you wish \n\tto use a proprietary dictionary. See documentation on \n\thow to format a dictionary file."
+	exit()
 end
+
+if ARGV[1] 
+	puts "Proprietary dictionary detected. Reading..."
+	dict = parse(ARGV[1]) 
+else
+	puts "No dictionary dectected. Will use default."
+	dict = parse(DEFAULT_DICTIONARY)
+end
+
+filename = ARGV[0]
+file = File.open( filename )
+text_array = []
+file.each{ |line| text_array = line.split }
 
 total = 0
 
-text_array.each do |word| 
+text_array.map do |word| 
 	word.slice!(-1) if (word[-1] == "." || word[-1] == ",")
 	word.downcase!
 	total += dict[word] if dict[word]

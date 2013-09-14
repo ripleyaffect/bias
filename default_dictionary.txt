@@ -1,0 +1,13 @@
+the	1 # hello this is a comment
+# this is also a comment
+hello # the word "hello" has a bias weight of 0
+goodbye
+# the word "goodbye" also has a bias wieght of 0
+quick 3
+brown -1
+fox 2
+jumps -1
+over -3
+the 10
+lazy 1
+dog 2
