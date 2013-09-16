@@ -10,7 +10,7 @@ def parse dict_file
 	# read in the file and put them into a hash which represents the dictionary
 	file.each{ |line| words << line.split }
 	words.map do |key, value| 
-		value = 0 if value == nil || value = "#"
+		value = 0 if value == nil || value == "#"
 		dictionary[key] = value.to_i unless key == '#' 
 	end
 

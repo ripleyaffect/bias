@@ -10,17 +10,17 @@ This sytem has several limitations, as it is. The most obvious is the use of a n
 
 ## Use ##
 
-To use the tool, enter the command "bias.rb <FILENAME>" at the command line, where <FILENAME> is a file containing the text you wish to be analyzed. The tool comes packaged with a default dictionary, but has the capabilty to use proprietary dicitonaries. A proprietary dictionary should be supplied on the command line, after the name of the file to be analyzed. Thus, the command to analyze a file with dictionary <DICTIONARY> is "bias.rb <FILENAME> <DICTIONARY>"
+To use the tool, enter the command "bias.rb FILENAME" at the command line, where FILENAME is a file containing the text you wish to be analyzed. The tool comes packaged with a default dictionary, but has the capabilty to use proprietary dicitonaries. A proprietary dictionary should be supplied on the command line, after the name of the file to be analyzed. Thus, the command to analyze a file with dictionary DICTIONARY is "bias.rb FILENAME DICTIONARY"
 
 ## Dictionary Files ##
 
-The tool allows the user to make use of a proprietary dictionary when analyzing text. To include a dictionary, simply provide the name of the dictionary as the second parameter when running the program ("bias.rb <FILENAME> <DICTIONARY>"). If a dictionary is not included, the program will read in the default dictionary, specified in preferences.rb. The tool includes a dictionary, compiled by the author.
+The tool allows the user to make use of a proprietary dictionary when analyzing text. To include a dictionary, simply provide the name of the dictionary as the second parameter when running the program ("bias.rb FILENAME DICTIONARY"). If a dictionary is not included, the program will read in the default dictionary, specified in preferences.rb. The tool includes a dictionary, compiled by the author.
 
 ### Format ###
 
 The dictionary file must adhere to a specific format:
 
-* Each entry must begin on a new line and must follow the format "<WORD> <BIAS VALUE>"
+* Each entry must begin on a new line and must follow the format "WORD BIAS VALUE"
 * Comments may be added to the dictionary, either after the word's bias value or on a new line beginning with an octothorpe character ("#"). 
 * An undefined bias value is interpreted as a 0 (A word is "undefined" if is has no assosciated bias value).
 
