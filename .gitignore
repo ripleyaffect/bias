@@ -1,3 +1,4 @@
 *.txt
 !default_dictionary.txt
 *.log
+*.DS_Store

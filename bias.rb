@@ -1,5 +1,18 @@
 #!/usr/bin/env ruby
 
+####################
+
+# Refactor for regexps:
+# √ Text is read in as stream from file (no data structure needed)
+# * Dictionary hash entry format can still be "PHRASE => VALUE"
+# √ Simple implementation: 
+# 		for dictonary.each {|key, value|, total+= value if text =~ /#{key}/i
+# * Parser needs updating to tokenize phrases and corresponding values.
+# 	This will require using an assignment operator.
+# 	The equals sign ("=") will do for now, but may be replaced. 	
+
+####################
+
 require_relative 'preferences'
 require_relative 'dict_parser'
 
@@ -15,20 +28,19 @@ if ARGV[1]
 	dict = parse(ARGV[1]) 
 else
 	puts "No dictionary dectected. Will use default."
-	dict = parse(DEFAULT_DICTIONARY)
+	dictionary = parse(DEFAULT_DICTIONARY)
 end
 
 filename = ARGV[0]
 file = File.open( filename )
-text_array = []
-file.each{ |line| text_array = line.split }
+text = ""
+file.each{ |line| text << line }
+
+puts text
 
 total = 0
 
-text_array.map do |word| 
-	word.slice!(-1) if (word[-1] == "." || word[-1] == ",")
-	word.downcase!
-	total += dict[word] if dict[word]
-end
+dictionary.each { |key, value| total += value if (text =~ /#{key}/i) }
 
 puts "The total is #{total}"
+
