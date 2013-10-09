@@ -12,13 +12,11 @@ def parse dict_file
 	phrases.map do |key, value| 
 		key.strip!
 		value = 0 if value == nil || value == "#"
-		dictionary[key] = value.to_i unless key[0] == '#' 
+		dictionary[key] = value.to_i unless key[0] == '#' || key == ''
 	end
 
 	# feedback for the user
 	puts "The dictionary was read"
-
-	puts dictionary
 
 	return dictionary
 end

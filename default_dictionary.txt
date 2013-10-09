@@ -1,13 +1,128 @@
-the	= 1
-# this a comment
-hello
-goodbye
-# the words "hello" and "goodbye" also has a bias wieght of 0
-quick brown = 3
-brown = -1
-fox = 2
-jumps = -1
-over = -3
-the = 10
-lazy = 1
-dog = 2
+# These values are taken from the 2005 paper "What Drives Media Slant?"
+# by Gentzkow and Shapiro:
+# http://faculty.chicagobooth.edu/jesse.shapiro/research/biasmeas.pdf
+
+# Democratic Phrases
+
+private accounts = 1
+trade agreement = 1
+American people = 1
+tax breaks = 1
+trade deficit = 1
+oil companies = 1
+credit card = 1
+nuclear option = 1
+war in Iraq = 1
+middle class = 1
+Rosa Parks = 1
+President budget = 1
+Republican party = 1
+change the rules = 1
+minimum wage = 1
+budget deficit = 1
+Republican senators = 1
+Privitization plan = 1
+wildlife refuge = 1
+card companies = 1
+worker's rights = 1
+poor people = 1
+Republican leader = 1
+Arctic refuge = 1
+cut funding = 1
+American workers = 1
+living in poverty = 1
+Senate Republicans = 1
+fuel efficiency = 1
+national wildlife = 1
+veterans health care = 1
+congressional black caucus = 1
+VA health care = 1
+billion in tax cuts = 1
+security trust fund = 1
+social security trust = 1
+privatize social security = 1
+American free trade = 1
+central American free = 1
+corporation for public broadcasting = 1
+additional tax cuts = 1
+pay for tax cuts = 1
+tax cuts for people = 1
+oil and gax companies = 1
+prescription drug bill = 1
+caliber sniper rifles = 1
+increase the minimum wage = 1
+system of checks and balances = 1
+middle class families = 1
+cut health care = 1
+civil rights movement = 1
+cuts to child support = 1
+drilling in the Arctic National = 1
+victims of gun violence = 1
+solvency of social security = 1
+Voting Rights Act = 1
+war in Iraq and Afghanistan = 1
+civil rights protections = 1
+credit card debt = 1
+
+# Democratic Additions
+Affordable Care Act = 1
+
+# Republican Phrases
+
+stem cell = -1
+natural gas = -1
+death tax = -1
+illegal aliens = -1
+class action = -1
+war on terror = -1
+embryonic cell = -1
+tax relief = -1
+illegal immigration = -1
+date the time = -1
+personal account = -1
+pass the bill = -1
+private property = -1
+border security = -1
+human life = -1
+Chief Justice = -1
+human embryos = -1
+increase taxes = -1
+retirement accounts = -1
+government spending = -1
+national forest = -1
+minority leader = -1
+urge support = -1
+cell lines = -1
+cord blood = -1
+action lawsuits = -1
+economic growth = -1
+food program = -1
+hate crimes legislation = -1
+adult stem cells = -1
+oil for food = -1
+personal retirement accounts = -1
+energy and natural resources = -1
+hate crimes law = -1
+change hearts and minds = -1
+global wr on terrorism = -1
+Circuit Court of Appeals = -1
+death tax repeal = -1
+housing and urban affairs = -1
+million jobs created = -1
+national flood insurance = -1
+oil for food scandal = -1
+private property rights = -1
+temporary worker program = -1
+class action reform = -1
+Tongass national forest = -1
+pluripotent = -1
+Supreme court of Texas = -1
+American Bar Assosciation = -1
+growth and job creation = -1
+natural gas = -1
+Grand Ole Opry = -1
+reform social security = -1
+
+# Republican Additions
+Obamacare = -1
+

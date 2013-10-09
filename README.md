@@ -10,7 +10,7 @@ This sytem has several limitations, as it is. The most obvious is the use of a n
 
 ## Use ##
 
-To use the tool, enter the command "bias.rb FILENAME" at the command line, where FILENAME is a file containing the text you wish to be analyzed. The tool comes packaged with a default dictionary, but has the capabilty to use proprietary dicitonaries. A proprietary dictionary should be supplied on the command line, after the name of the file to be analyzed. Thus, the command to analyze a file with dictionary DICTIONARY is "bias.rb FILENAME DICTIONARY"
+To use the tool, enter the command "./bias.rb FILENAME" at the command line, where FILENAME is a file containing the text you wish to be analyzed. Note that it may be neccesary to change the file persmissions to allow bias.rb to run as an executable. You can do this by typing "chmod +x bias.rb" at the command line. The tool comes packaged with a default dictionary, but has the capabilty to use proprietary dicitonaries. A proprietary dictionary should be supplied on the command line, after the name of the file to be analyzed. Thus, the command to analyze a file with dictionary DICTIONARY is "bias.rb FILENAME DICTIONARY"
 
 ## Dictionary Files ##
 
@@ -20,19 +20,17 @@ The tool allows the user to make use of a proprietary dictionary when analyzing 
 
 The dictionary file must adhere to a specific format:
 
-* Each entry must begin on a new line and must follow the format "WORD BIAS VALUE"
-* Comments may be added to the dictionary, either after the word's bias value or on a new line beginning with an octothorpe character ("#"). 
+* Each entry must begin on a new line and must follow the format "PHRASE = VALUE"
+* Comments may be added to the dictionary on a new line beginning with an octothorpe character ("#"). 
 * An undefined bias value is interpreted as a 0 (A word is "undefined" if is has no assosciated bias value).
 
 
 ## Intended expansions ##
 
-* Adding the functionality for including phrases in the dictionry instead of just single words.
 * Adding a more useful dictionary, based on research in the field, and potentially several dictionaries for measuring various values.
 * Adding Robustness to account for user error or unexpected input.
 * Expanding the tool to measure two parameters simultaneously. This may be implemented using imaginary numbers.
 * Adding functionality for multiple input files.
 * Adding more feedback for the user, like displayig which words contributed to the score and how much/in which direction they contributed.
 * Adding functionlity for a data mining API (pocket?) to grab articles from online and analyze them on the fly.
-* Adding funtionality to the dictionary to allow commented justification for the bias value associated with a particular word or phrase.
 * Possible expansion into a web service or browswer extension.

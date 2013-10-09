@@ -25,7 +25,7 @@ end
 
 if ARGV[1] 
 	puts "Proprietary dictionary detected. Reading..."
-	dict = parse(ARGV[1]) 
+	dictionary = parse(ARGV[1]) 
 else
 	puts "No dictionary dectected. Will use default."
 	dictionary = parse(DEFAULT_DICTIONARY)
@@ -36,11 +36,12 @@ file = File.open( filename )
 text = ""
 file.each{ |line| text << line }
 
-puts text
-
 total = 0
 
-dictionary.each { |key, value| total += value if (text =~ /#{key}/i) }
-
-puts "The total is #{total}"
+if dictionary == nil
+	puts "The dictionary was empty! Ending Program."
+else
+	dictionary.each { |key, value| total += value if (text =~ /#{key}/i) }
+	puts "The total is #{total}"
+end
 
