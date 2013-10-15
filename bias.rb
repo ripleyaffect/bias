@@ -19,7 +19,10 @@ require_relative 'dict_parser'
 # print "Enter the name of the file to read: "
 unless ARGV[0]
 	puts 'There was no file given.'
-	puts "\tPlease give a filename in the form 'bias.rb [FILENAME]', \n\tor use 'bias.rb [FILENAME] [DICTIONARY]' if you wish \n\tto use a proprietary dictionary. See documentation on \n\thow to format a dictionary file."
+	puts "\tPlease give a filename in the form 'bias.rb [FILENAME]',"
+	puts "\tor use 'bias.rb [FILENAME] [DICTIONARY]' if you wish "
+	puts "\tto use a proprietary dictionary. See documentation on "
+	puts "\thow to format a dictionary file."
 	exit()
 end
 
@@ -37,11 +40,20 @@ text = ""
 file.each{ |line| text << line }
 
 total = 0
+result = []
 
 if dictionary == nil
 	puts "The dictionary was empty! Ending Program."
 else
-	dictionary.each { |key, value| total += value if (text =~ /#{key}/i) }
+	puts "Dictionary Items found: "
+	dictionary.each do |key, value| 
+		result = text.scan(/#{key}/i)
+		if result.size > 0
+			puts "\t#{result.size} * '#{key}'(#{value}) = #{value * result.size}"
+			total += value  * result.size
+		end
+
+	end
 	puts "The total is #{total}"
 end
 
